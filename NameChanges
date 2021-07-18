@@ -1,0 +1,23 @@
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Karz1337/ArcticCommands/main/Whitelisted"))()
+
+PolarMojis = {"[🐤]", "[🤠]", "[😎]", "[😳]", "[🥱]", "[🤬]", "[👻]", "[🧸]", "[🎃]", "[🥶]", "[💥]", "[🔥]", "[💙]", "[ඞ]"}
+
+while wait(25) do
+    pcall(function()
+        for i, v in pairs(game:GetService("Players"):GetChildren()) do
+            if v:IsInGroup(11247010) then
+                if table.find(Admins, v.UserId) then
+                    v.Character:WaitForChild("Humanoid").DisplayName = "[☃]".." "..v.Name
+                elseif table.find(Moderators, v.UserId) then
+                    v.Character:WaitForChild("Humanoid").DisplayName = "[🎩]".." "..v.Name
+                elseif table.find(Xondo, v.UserId) then
+                    v.Character:WaitForChild("Humanoid").DisplayName = "[⭐]".." "..v.Name
+                elseif table.find(Polar, v.UserId) then
+                    v.Character:WaitForChild("Humanoid").DisplayName = PolarMojis[math.random(1, #PolarMojis)].." "..v.Name
+                elseif v:IsInGroup(11247010) then
+                    v.Character:WaitForChild("Humanoid").DisplayName = "[❄]".." "..v.Name
+                end
+            end
+        end
+    end)
+end
