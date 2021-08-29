@@ -6,6 +6,8 @@ while wait(25) do
     pcall(function()
         for i, v in pairs(game:GetService("Players"):GetChildren()) do
             if v:IsInGroup(11247010) then
+                if table.find(Helpers, v.UserId) then
+                    v.Character:WaitForChild("Humanoid").DisplayName = "[🥶]".." "..v.Name
                 if table.find(Admins, v.UserId) then
                     v.Character:WaitForChild("Humanoid").DisplayName = "[☃]".." "..v.Name
                 elseif table.find(Moderators, v.UserId) then
